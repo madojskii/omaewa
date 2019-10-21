@@ -10,7 +10,7 @@ buildscript {
     }
 }
 
-version "0.1"
+version ""
 group "omaewa"
 
 apply plugin:"eclipse"
@@ -31,6 +31,7 @@ dependencies {
     compile "org.grails:grails-core"
     compile "org.springframework.boot:spring-boot-starter-actuator"
     compile "org.springframework.boot:spring-boot-starter-tomcat"
+    compile 'org.grails.plugins:spring-security-core:3.2.0.M1'
     compile "org.grails:grails-web-boot"
     compile "org.grails:grails-logging"
     compile "org.grails:grails-plugin-rest"
@@ -59,6 +60,7 @@ dependencies {
     testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
     testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:2.47.1"
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.1'
 }
 
 bootRun {
