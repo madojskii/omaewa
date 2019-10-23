@@ -19,31 +19,21 @@
     <asset:javascript src="jquery-3.3.1.min.js"/>
     <asset:javascript src="bootstrap.bundle.js"/>
     <asset:stylesheet src="watch-it.css"/>
+    <asset:stylesheet src="application.css"/>
+    <asset:javascript src="application.js"/>
     <g:layoutHead/>
 </head>
 
-<body>
-<div class="d-flex" id="wrapper">
+<body id="page-top">
 
-    <!-- Sidebar -->
+<g:render template="/layouts/navbar"/>
+
+<div id="wrapper">
+
     <g:render template="/layouts/menu"/>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-
-        <g:render template="/layouts/navbar"/>
-
-        <div id="backgroundImage" style="background-image: url(${assetPath(src: 'background.jpg')});opacity: 0.4"></div>
-        <g:layoutBody/>
-    </div>
-    <!-- /#page-content-wrapper -->
+    <div id="backgroundImage" style="background-image: url(${assetPath(src: 'background.jpg')});opacity: 0.4"></div>
+    <g:layoutBody/>
 </div>
-<!-- /#wrapper -->
-
-<!-- Bootstrap core JavaScript -->
-
-<!-- Menu Toggle Script -->
 <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();

@@ -1,6 +1,9 @@
-<div class="bg-light border-right" id="sidebar-wrapper">
-    <div class="sidebar-heading">Start Bootstrap </div>
-    <div class="list-group list-group-flush">
-        <g:link controller="csgoMatch" class="list-group-item list-group-item-action bg-light">${message(code: 'csgoMatch.label')}</g:link>
-    </div>
+<div class="navbar-nav sidebar">
+    <li class="nav-item">
+        <g:link controller="match" class="nav-link">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>${message(code: 'match.label')}</span></g:link>
+        <a class="nav-link" href="index.html">
+        </a>
+    </li>
 </div>

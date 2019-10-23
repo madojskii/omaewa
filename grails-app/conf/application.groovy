@@ -4,6 +4,7 @@
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'omaewa.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'omaewa.UserRole'
 grails.plugin.springsecurity.authority.className = 'omaewa.Role'
+grails.plugin.springsecurity.password.algorithm = 'bcrypt'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],
@@ -32,6 +33,10 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'omaewa.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'omaewa.UserRole'
 grails.plugin.springsecurity.authority.className = 'omaewa.Role'
+grails.plugin.springsecurity.securityConfigType = "Requestmap"
+grails.plugin.springsecurity.requestMap.className = 'omaewa.Requestmap'
+grails.plugin.springsecurity.rejectIfNoRule = true
+grails.plugin.springsecurity.fii.rejectPublicInvocations = false
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],
