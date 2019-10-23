@@ -20,4 +20,23 @@ interface IMatchService {
 @Service(Match)
 abstract class MatchService implements IMatchService {
 
+    List<Match> list(Map args) {
+        return Match.createCriteria().list(args) {
+            if(!args.sort) {
+                order('date', 'asc')
+                order('state', 'asc')
+            }
+        }
+    }
+
+    def makeWon(Match match) {
+        match.state = Match.winState
+        save(match)
+    }
+
+    def makeLost(Match match) {
+        match.state = Match.loseState
+        save(match)
+    }
+
 }

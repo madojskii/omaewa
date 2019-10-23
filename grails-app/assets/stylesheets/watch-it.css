@@ -1,3 +1,19 @@
+/*
 .panel-body {
     margin: 40px;
+}*/
+.oddWin {
+    background-color: green;
+}
+
+.evenWin {
+    background-color: greenyellow;
+}
+
+.oddLose {
+    background-color: #ff655b;
+}
+
+.evenLose {
+    background-color: #8a3c34;
 }

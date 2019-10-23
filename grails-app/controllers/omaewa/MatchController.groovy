@@ -1,6 +1,7 @@
 package omaewa
 
 import grails.validation.ValidationException
+
 import static org.springframework.http.HttpStatus.*
 
 class MatchController {
@@ -11,7 +12,8 @@ class MatchController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond matchService.list(params), model:[matchCount: matchService.count()]
+        def matchList = matchService.list(params)
+        respond matchList, model:[matchCount: matchList.totalCount]
     }
 
     def show(Long id) {
@@ -85,6 +87,28 @@ class MatchController {
             }
             '*'{ render status: NO_CONTENT }
         }
+    }
+
+    def wonMatch(Long id) {
+        Match match = matchService.get(id)
+        if(!match) {
+            notFound()
+            return
+        }
+        matchService.makeWon(match)
+        flash.message = message(code: 'match.updated.state.successfuly')
+        redirect action: "index"
+    }
+
+    def loseMatch(Long id) {
+        Match match = matchService.get(id)
+        if(!match) {
+            notFound()
+            return
+        }
+        matchService.makeLost(match)
+        flash.message = message(code: 'match.updated.state.successfuly')
+        redirect action: "index"
     }
 
     protected void notFound() {

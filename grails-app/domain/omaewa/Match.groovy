@@ -15,4 +15,12 @@ class Match {
 
     static mapping = {
     }
+
+    static def getWinState() {
+        return MatchState.WIN
+    }
+
+    static def getLoseState() {
+        return MatchState.LOSE
+    }
 }
