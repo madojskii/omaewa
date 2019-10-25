@@ -12,8 +12,9 @@ class MatchController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        def matchList = matchService.list(params)
-        respond matchList, model:[matchCount: matchList.totalCount]
+        def matchPlayed = matchService.listPlayed(params)
+        def matchList = matchService.listToPlay(params)
+        render view: 'index' , model:[matchList: matchList, matchCount: matchList.totalCount, matchPlayed: matchPlayed, fragment: params.tab]
     }
 
     def show(Long id) {

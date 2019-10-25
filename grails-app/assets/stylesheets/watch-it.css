@@ -3,17 +3,25 @@
     margin: 40px;
 }*/
 .oddWin {
-    background-color: green;
+    background-color: #9ACD32;
 }
 
 .evenWin {
-    background-color: greenyellow;
+    background-color: #228B22;
 }
 
 .oddLose {
-    background-color: #ff655b;
+    background-color: #FA8072;
 }
 
 .evenLose {
-    background-color: #8a3c34;
+    background-color: #FF0000;
+}
+
+.even {
+    background-color: #FFFFF0!important;
+}
+
+.odd {
+    background-color: #FFF8DC!important;
 }

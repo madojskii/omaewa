@@ -20,11 +20,21 @@ interface IMatchService {
 @Service(Match)
 abstract class MatchService implements IMatchService {
 
-    List<Match> list(Map args) {
+    List<Match> listToPlay(Map args) {
+        return Match.createCriteria().list(args) {
+            order('date', 'asc')
+            eq('state', Match.pendingState)
+        }
+    }
+
+    List<Match> listPlayed(Map args) {
         return Match.createCriteria().list(args) {
             if(!args.sort) {
-                order('date', 'asc')
-                order('state', 'asc')
+                order('date', 'desc')
+            }
+            or {
+                eq('state', Match.loseState)
+                eq('state', Match.winState)
             }
         }
     }

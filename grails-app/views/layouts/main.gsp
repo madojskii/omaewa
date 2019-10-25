@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><g:layoutTitle default="Test" /></title>
     <link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
+    <script src="https://kit.fontawesome.com/5f159114ee.js" crossorigin="anonymous"></script>
     <meta name="description" content="">
     <meta name="author" content="">
 

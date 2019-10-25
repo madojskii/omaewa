@@ -23,4 +23,8 @@ class Match {
     static def getLoseState() {
         return MatchState.LOSE
     }
+
+    static def getPendingState() {
+        return MatchState.PENDING
+    }
 }
